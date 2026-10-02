@@ -1,8 +1,10 @@
+import MapArea from '../components/map/MapArea';
+
 function HomePage() {
   return (
-    <main className='min-h-screen'>
-      <h1>Craftsi</h1>
-    </main>
+    <div className='h-full'>
+      <MapArea />
+    </div>
   );
 }
 
