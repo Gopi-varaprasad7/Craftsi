@@ -1,10 +1,19 @@
 import { LocateFixed, Minus, Plus } from 'lucide-react';
 import BookingPanel from '../booking/BookingPanel';
+import DriverMarker from './DriverMarker';
+import RoutePreview from './RoutePreview';
 
 function MapArea() {
   return (
     <section className='relative h-full min-h-[calc(100vh-5rem)] overflow-hidden bg-[#e8f0ed]'>
       <BookingPanel />
+      <RoutePreview />
+
+      <DriverMarker name='Driver 1' eta={6} className='left-[62%] top-[25%]' />
+
+      <DriverMarker name='Driver 2' eta={8} className='left-[72%] top-[48%]' />
+
+      <DriverMarker name='Driver 3' eta={7} className='left-[54%] top-[72%]' />
       {/* Temporary map background */}
       <div className='absolute inset-0'>
         <div className='absolute left-[8%] top-[12%] h-[2px] w-[70%] rotate-[18deg] bg-white/90' />
