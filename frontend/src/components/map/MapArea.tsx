@@ -1,8 +1,10 @@
 import { LocateFixed, Minus, Plus } from 'lucide-react';
+import BookingPanel from '../booking/BookingPanel';
 
 function MapArea() {
   return (
     <section className='relative h-full min-h-[calc(100vh-5rem)] overflow-hidden bg-[#e8f0ed]'>
+      <BookingPanel />
       {/* Temporary map background */}
       <div className='absolute inset-0'>
         <div className='absolute left-[8%] top-[12%] h-[2px] w-[70%] rotate-[18deg] bg-white/90' />
