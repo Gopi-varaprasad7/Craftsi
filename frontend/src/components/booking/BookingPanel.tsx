@@ -3,10 +3,7 @@ import { ArrowUpRight, CalendarClock, ShieldCheck, Zap } from 'lucide-react';
 import LocationInput from './LocationInput';
 import ServiceSelector from './ServiceSelector';
 
-type BookingPanelProps = {
-  onFindDrivers: () => void;
-};
-function BookingPanel({ onFindDrivers }: BookingPanelProps) {
+function BookingPanel() {
   return (
     <section className='absolute left-6 top-6 z-20 w-[390px] rounded-3xl border border-white/70 bg-white p-5 shadow-2xl shadow-neutral-900/10'>
       {/* Header */}

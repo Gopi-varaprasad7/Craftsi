@@ -13,6 +13,11 @@ function DriverMarker({ name, eta, className = '' }: DriverMarkerProps) {
         <div className='flex h-7 w-7 items-center justify-center rounded-full bg-neutral-900 text-white'>
           <Car size={14} />
         </div>
+        <div className='leading-none'>
+          <p className='text-[10px] font-medium text-neutral-400'>Nearby</p>
+
+          <p className='mt-1 text-xs font-semibold text-neutral-800'>{name}</p>
+        </div>
 
         <div className='leading-none'>
           <p className='text-[10px] font-medium text-neutral-400'>Nearby</p>
