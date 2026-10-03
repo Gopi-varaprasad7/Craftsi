@@ -2,10 +2,15 @@ import { ArrowUpRight, CalendarClock, ShieldCheck, Zap } from 'lucide-react';
 
 import LocationInput from './LocationInput';
 import ServiceSelector from './ServiceSelector';
+import Button from '../ui/Button';
 
 function BookingPanel() {
+  function onFindDrivers(event: React.MouseEvent<HTMLButtonElement>): void {
+    throw new Error('Function not implemented.');
+  }
+
   return (
-    <section className='absolute left-6 top-6 z-20 w-[390px] rounded-3xl border border-white/70 bg-white p-5 shadow-2xl shadow-neutral-900/10'>
+    <section className='absolute left-6 top-6 z-20 width:390px rounded-3xl border border-white/70 bg-white p-5 shadow-2xl shadow-neutral-900/10'>
       {/* Header */}
       <div className='mb-5'>
         <p className='mb-2 text-[10px] font-semibold uppercase tracking-[0.2em] text-orange-500'>
@@ -23,7 +28,7 @@ function BookingPanel() {
       <div className='overflow-hidden rounded-2xl border border-neutral-200 bg-white'>
         <LocationInput type='pickup' />
 
-        <div className='ml-[25px] border-l border-dashed border-neutral-300' />
+        <div className='ml-6.25 border-l border-dashed border-neutral-300' />
 
         <LocationInput type='destination' />
       </div>
@@ -36,26 +41,29 @@ function BookingPanel() {
       </div>
 
       {/* Find drivers */}
-      <button
+      <Button
         type='button'
-        className='mt-5 flex h-14 w-full items-center justify-center gap-2 rounded-2xl bg-orange-500 px-5 text-sm font-semibold text-white shadow-lg shadow-orange-500/20 transition hover:bg-orange-600 active:scale-[0.99]'
+        size='lg'
+        className='w-full'
+        onClick={onFindDrivers}
       >
         Find drivers
         <ArrowUpRight size={18} />
-      </button>
+      </Button>
 
       {/* Schedule */}
-      <button
+      <Button
         type='button'
-        className='mt-3 flex h-12 w-full items-center justify-between rounded-2xl px-3 text-sm font-medium text-neutral-600 transition hover:bg-neutral-50'
+        variant='ghost'
+        className='mt-3 h-12 w-full justify-between px-3'
       >
         <span className='flex items-center gap-3'>
-          <CalendarClock size={18} className='text-neutral-400' />
+          <CalendarClock size={18} className='text-(--color-text-muted)' />
           Schedule for later
         </span>
 
         <span className='text-neutral-300'>›</span>
-      </button>
+      </Button>
 
       {/* Trust indicators */}
       <div className='mt-3 grid grid-cols-2 gap-2 border-t border-neutral-100 pt-4'>

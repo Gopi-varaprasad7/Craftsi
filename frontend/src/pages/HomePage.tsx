@@ -1,14 +1,9 @@
-// import MapArea from '../components/map/MapArea';
-// import type { Bid } from '../types/ride';
+import MapArea from '../components/map/MapArea';
 
 function HomePage() {
   return (
     <div className='h-full'>
-      {/* <MapArea bids={[]} onSelectDriver={function (bid: Bid): void {
-              throw new Error('Function not implemented.');
-          } } onClose={function (): void {
-              throw new Error('Function not implemented.');
-          } } >{}</MapArea> */}
+      <MapArea />
     </div>
   );
 }

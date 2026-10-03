@@ -1,6 +1,9 @@
 import { Car, Clock3, MapPin, Star, X } from 'lucide-react';
 
 import type { Bid } from '../../types/ride';
+import Badge from '../ui/Badge';
+import Button from '../ui/Button';
+import Card from '../ui/Card';
 
 type BiddingPanelProps = {
   bids: Bid[];
@@ -10,7 +13,7 @@ type BiddingPanelProps = {
 
 function BiddingPanel({ bids, onSelectDriver, onClose }: BiddingPanelProps) {
   return (
-    <section className='absolute right-6 top-6 z-30 flex h-[calc(100%-3rem)] w-[390px] flex-col overflow-hidden rounded-3xl border border-white/70 bg-white shadow-2xl shadow-neutral-900/10'>
+    <section className='absolute right-6 top-6 z-30 flex h-[calc(100%-3rem)] w-97.5 flex-col overflow-hidden rounded-3xl border border-white/70 bg-white shadow-2xl shadow-neutral-900/10'>
       {/* Header */}
       <div className='border-b border-neutral-100 px-5 pb-4 pt-5'>
         <div className='flex items-start justify-between'>
@@ -54,7 +57,7 @@ function BiddingPanel({ bids, onSelectDriver, onClose }: BiddingPanelProps) {
       {/* Bids */}
       <div className='flex-1 space-y-3 overflow-y-auto p-4'>
         {bids.map((bid) => (
-          <div
+          <Card
             key={bid.id}
             className='rounded-2xl border border-neutral-200 bg-white p-4 transition hover:border-orange-200 hover:shadow-md'
           >
@@ -125,14 +128,15 @@ function BiddingPanel({ bids, onSelectDriver, onClose }: BiddingPanelProps) {
             </div>
 
             {/* Select */}
-            <button
+            <Button
               type='button'
+              size='md'
+              className='mt-4 w-full'
               onClick={() => onSelectDriver(bid)}
-              className='mt-4 h-11 w-full rounded-xl bg-neutral-900 text-sm font-semibold text-white transition hover:bg-neutral-800 active:scale-[0.99]'
             >
               Select driver
-            </button>
-          </div>
+            </Button>
+          </Card>
         ))}
       </div>
 
